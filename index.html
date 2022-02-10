@@ -1,81 +1,248 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Task Form</title>
   </head>
   <body>
     <header>
-        <h1>Task Form</h1>
+      <h1>Task Form</h1>
     </header>
     <nav>
-        <ul>
-            <li><a href="#about">Task Form</a></li>
-            <li><a href="#work">Task Card</a></li>
-            <li><a href="#contact">Task List</a></li>
-        </ul>
+      <ul>
+        <li><a href="#about">Task Form</a></li>
+        <li><a href="#contact">Task List</a></li>
+      </ul>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <main>
-    <!---Task Form-->
-        <section id="form">
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputName" class="form-label">Name</label>
-          <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+      <!---Task Form-->
+      <div class="container">
+        <div class="row">
+          <div class="col">
+
+          <section id="form">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Name</label>
+                <input
+                  type="name"
+                  class="form-control"
+                  id="exampleInputName"
+                  aria-describedby="nameHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputDescription" class="form-label"
+                  >Description</label
+                >
+                <input
+                  type="description"
+                  class="form-control"
+                  id="exampleInputDescription"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputAssigned To" class="form-label"
+                  >Assigned To</label
+                >
+                <input
+                  type="assigned to"
+                  class="form-control"
+                  id="exampleInputAssigned To"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputDue Date" class="form-label"
+                  >Due Date</label
+                >
+                <br>
+                <!---Dropdown Date picker-->
+                <input type="datetime-local" id="Test_DatetimeLocal" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputStatus" class="form-label">Status</label>
+                <!--Dropdown Button-->
+                <button
+                  class="btn btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenu2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Select
+                </button>
+                <ul class="dropdown-menu dropdownMenu2">
+                  <li>
+                    <button class="dropdown-item" type="button">To Do</button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">In Progress</button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">Review</button>
+                  </li>
+                  <li><button class="dropdown-item" type="button">Done</button></li>
+                </ul>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </section>
           </div>
-        <div class="mb-3">
-          <label for="exampleInputDescription" class="form-label">Description</label>
-          <input type="description" class="form-control" id="exampleInputDescription">
         </div>
-        <div class="mb-3">
-            <label for="exampleInputAssigned To" class="form-label">Assigned To</label>
-            <input type="assigned to" class="form-control" id="exampleInputAssigned To">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputDue Date" class="form-label">Due Date</label>
-            <input type="due date" class="form-control" id="exampleInputDue Date">
-            <!---Dropdown Date picker-->
-            <input type="datetime-local" id="Test_DatetimeLocal">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputStatus" class="form-label">Status</label>
-            <input type="status" class="form-control" id="exampleInputStatus">
-            <!--Dropdown Button-->
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-            <ul class="dropdown-menu dropdownMenu2">
-              <li><button class="dropdown-item" type="button">To Do</button></li>
-              <li><button class="dropdown-item" type="button">In Progress</button></li>
-              <li><button class="dropdown-item" type="button">Review</button></li>
-              <li><button class="dropdown-item" type="button">Done</button></li>
+      </div>
+      <!-- Task List Cards -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item">
+                <div class="card" style="width: 18rem">
+                  <div class="card-body">
+                    <h3 class="card-title">Task #1</h3>
+                    <h4 class="card-text">Assign to John</h4>
+                    <p class="card-text1">Description of task</p>
+                    <p class="card-text2">Due Date: 02/08/2022</p>
+                    <p class="card-text3">Status: IN PROGRESS</p>
+                  </div>
+                  <label for="select">Select</label>
+                  <select name="select" id="select">
+                    <option value="to-do">TO-DO</option>
+                    <option value="in-progress">IN-PROGRESS</option>
+                    <option value="review">REVIEW</option>
+                    <option value="done">DONE</option>
+                  </select>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="card" style="width: 18rem">
+                  <div class="card-body">
+                    <h3 class="card-title">Task #2</h3>
+                    <h4 class="card-text">Assign to Jane</h4>
+                    <p class="card-text1">Description of task</p>
+                    <p class="card-text2">Due Date: 02/08/2022</p>
+                    <p class="card-text3">Status: IN PROGRESS</p>
+                  </div>
+                  <label for="select">Select</label>
+                  <select name="select" id="select">
+                    <option value="to-do">TO-DO</option>
+                    <option value="in-progress">IN-PROGRESS</option>
+                    <option value="review">REVIEW</option>
+                    <option value="done">DONE</option>
+                  </select>
+                </div>
+              </li>
             </ul>
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item">
+                <div class="card" style="width: 18rem">
+                  <div class="card-body">
+                    <h3 class="card-title">Task #3</h3>
+                    <h4 class="card-text">Assign to James</h4>
+                    <p class="card-text1">Description of task</p>
+                    <p class="card-text2">Due Date: 02/08/2022</p>
+                    <p class="card-text3">Status: IN PROGRESS</p>
+                  </div>
+                  <label for="select">Select</label>
+                  <select name="select" id="select">
+                    <option value="to-do">TO-DO</option>
+                    <option value="in-progress">IN-PROGRESS</option>
+                    <option value="review">REVIEW</option>
+                    <option value="done">DONE</option>
+                  </select>
+                </div>
+              </li>
+
+              <li class="list-group-item">
+                <div class="card" style="width: 18rem">
+                  <div class="card-body">
+                    <h3 class="card-title">Task #3</h3>
+                    <h4 class="card-text">Assign to James</h4>
+                    <p class="card-text1">Description of task</p>
+                    <p class="card-text2">Due Date: 02/08/2022</p>
+                    <p class="card-text3">Status: IN PROGRESS</p>
+                  </div>
+                  <label for="select">Select</label>
+                  <select name="select" id="select">
+                    <option value="to-do">TO-DO</option>
+                    <option value="in-progress">IN-PROGRESS</option>
+                    <option value="review">REVIEW</option>
+                    <option value="done">DONE</option>
+                  </select>
+                </div>
+              </li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item">
+                <div class="card" style="width: 18rem">
+                  <div class="card-body">
+                    <h3 class="card-title">Task #3</h3>
+                    <h4 class="card-text">Assign to James</h4>
+                    <p class="card-text1">Description of task</p>
+                    <p class="card-text2">Due Date: 02/08/2022</p>
+                    <p class="card-text3">Status: IN PROGRESS</p>
+                  </div>
+                  <label for="select">Select</label>
+                  <select name="select" id="select">
+                    <option value="to-do">TO-DO</option>
+                    <option value="in-progress">IN-PROGRESS</option>
+                    <option value="review">REVIEW</option>
+                    <option value="done">DONE</option>
+                  </select>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="card" style="width: 18rem">
+                  <div class="card-body">
+                    <h3 class="card-title">Task #3</h3>
+                    <h4 class="card-text">Assign to James</h4>
+                    <p class="card-text1">Description of task</p>
+                    <p class="card-text2">Due Date: 02/08/2022</p>
+                    <p class="card-text3">Status: IN PROGRESS</p>
+                  </div>
+                  <label for="select">Select</label>
+                  <select name="select" id="select">
+                    <option value="to-do">TO-DO</option>
+                    <option value="in-progress">IN-PROGRESS</option>
+                    <option value="review">REVIEW</option>
+                    <option value="done">DONE</option>
+                  </select>
+                </div>
+              </li>
+            </ul>
+
+
+            </div>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </section>
-    
+      </div>
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"
+      ></script>
 
-    
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-    </main>
+    --></main>
   </body>
 </html>

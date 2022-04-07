@@ -3,8 +3,6 @@ const tasks = new TaskManager();
 
 console.log(tasks);
 
-
-
 // name, description, assignedTo, dueDate, status)
 const taskOne = new TaskManager("taskOne");
 

@@ -1,16 +1,22 @@
-class TaskManager {
+// const newTask = {
+//     id: this.currentId,
+//     name: name,
+//     description : description,
+//     assignedTo : assigned,
+//     date: date,
+//     status: status
+// }
 
+class TaskManager {
     constructor(tasks,currentId = 0) {
         this.tasks = [];
         this.currentId = currentId;
-    }
-    addTask(name, description, assignedTo, dueDate, status, currentId) {
-        // currentId not incrementing
-        this.currentId++;
-        this.tasks.push(this.tasks, description, assignedTo, dueDate, status);
-        console.log(this.currentId)
-        return this.currentId;
-    }
 
+    }
+    addTask(newTaskNameInput, newTaskDescription, newTaskAssignedTo, newTaskDueDate, status, currentId) {
+        // currentId not incrementing
+        this.currentId ++;
+        return this.tasks.push(newTaskNameInput, newTaskDescription, newTaskAssignedTo, newTaskDueDate, status, this.currentId);
+    }
 }
 

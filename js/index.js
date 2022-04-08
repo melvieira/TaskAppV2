@@ -45,7 +45,7 @@ const errorMessage = document.querySelector('#alertMessage');
     const assignedTo = newTaskAssignedTo.value;
     const dueDate = newTaskDueDate.value;
     if(!validFormFieldInput(name)){
-        error.Message.innerHTML = "Invalid name input";
+        error.Message.innerHTML = "Invalid name input"
         errorMessage.style.display = "block"
     }else{
         errorMessage.style.display = "none"

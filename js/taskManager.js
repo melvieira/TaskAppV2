@@ -26,13 +26,45 @@ function createTaskHtml(newTaskNameInput, newTaskDescription, newTaskAssignedTo,
 class TaskManager {
     constructor(tasks, currentId =0) {
         this.tasks = [];
-        this.currentId = currentId++;
+        this.currentId = currentId;
 
     }
-    addTask(newTaskNameInput, newTaskDescription, newTaskAssignedTo, newTaskDueDate, status) {
+    addTask(newTaskNameInput, newTaskDescription, newTaskAssignedTo, newTaskDueDate, newTaskStatus) {
         // currentId not incrementing
-        this.currentId++;
-        return this.tasks.push(newTaskNameInput, newTaskDescription, newTaskAssignedTo, newTaskDueDate, status, this.currentId);
+        const task = {
+            // Increment the currentId property
+            id: this.currentId++,
+            name: newTaskNameInput,
+            description: newTaskDescription,
+            assignedTo: newTaskAssignedTo,
+            dueDate: newTaskDueDate,
+            status: newTaskStatus
+        };
+        return this.tasks.push(task);
+    }
+
+    render(){
+       let tasksHtmlList = [];
+        for (let i =0; i < tasks.length; i++) {
+            let currentTasks = tasks;
+            let date = new Date.toString(newTaskDueDate)
+            let formattedDate = date;
+            let taskHtml = createTaskHtml(currentTasks, formattedDate);
+            return tasksHtmlList.push(taskHtml);
+        }
+        const taskHtml = tasksHtmlList.join(tasks);
+        const listTasks = document.querySelector('#listTasks');
+       console.log(taskHtml);
+
+        listTasks.innerHTML = taskHtml;
+
+        // tasks.forEach(
+        // tasksHtmlList.push(tasks)
+        // )
+        // let date = new Date.toString(newTaskDueDate)
+        // let formattedDate = date;
+        // let taskHtml = createTaskHtml(newTaskNameInput, newTaskDescription, newTaskAssignedTo, newTaskDueDate, formattedDate)
+        // tasksHtmlList.push(taskHtml)
     }
 }
 

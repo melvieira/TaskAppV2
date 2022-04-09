@@ -1,3 +1,10 @@
+/*Things to fix
+1. Status dropdown working but, picked option not sticking
+2. Need to increment the task ID
+3. Status submit not working.
+
+*/
+
 
 const tasks = new TaskManager();
 
@@ -31,6 +38,7 @@ const newTaskNameInput = document.querySelector('#newTaskNameInput');
 const newTaskDescription = document.querySelector('#newTaskDescription');
 const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
 const newTaskDueDate = document.querySelector('#newTaskDueDate');
+const newTaskStatus = document.querySelector('#newTaskStatus');
 const errorMessage = document.querySelector('#alertMessage');
 
 
@@ -44,17 +52,31 @@ const errorMessage = document.querySelector('#alertMessage');
     const description = newTaskDescription.value;
     const assignedTo = newTaskAssignedTo.value;
     const dueDate = newTaskDueDate.value;
+    const status = newTaskStatus.value;
     if(!validFormFieldInput(name)){
         error.Message.innerHTML = "Invalid name input"
         errorMessage.style.display = "block"
     }else{
         errorMessage.style.display = "none"
     }
+
 let newTask = new TaskManager();
 newTask.addTask(name, description, assignedTo, dueDate);
-console.log(newTask);
+
+let taskList =[];
+taskList.push(newTask);
+console.log(taskList);
+
+const inputs = document.querySelectorAll('#newTaskNameInput, #newTaskDescription, #newTaskAssignedTo, #newTaskDueDate');
+
+inputs.forEach(input => {
+    input.value = '';
+})
+
 });
 
+let taskHtml = createTaskHtml("taskFive", "washing dishes", "Mel", "4/13/2022", "IN-PROGRESS" );
+console.log(taskHtml);
 
 
 function validFormFieldInput(data){

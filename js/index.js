@@ -1,7 +1,8 @@
 /*Things to fix
-1. Status dropdown working but, picked option not showing up in task li -Geoff
+1. Status dropdown working but, picked option not showing up in task li -Geoff. DONE by accident? - Mel
 2. Need to increment the task ID - Geoff
-3. Task 5 step 2/3. Render not showing up on page - Mel
+    New tasks are not being stored in "tasks" array;
+3. Task 5 step 2/3. Render not showing up on page - Mel DONE
 4. Task 6 step 3. Need to fix error to print on page
 */
 
@@ -18,6 +19,9 @@ console.log(tasks);
 // const taskTwo = new TaskManager("taskTwo");
 // taskTwo.addTask('taskTwo', 'Do laundry', 'Geoffroy', '4/13/2022', 'PENDING');
 // console.log(taskTwo);
+
+// create taskList to hold all tasks
+let taskList =[];
 
 //code from example for testing
 const newTaskForm = document.querySelector('#newTaskForm');
@@ -48,45 +52,40 @@ function validFormFieldInput(){
     }
 }
 
-    // const task = input.value;
 
-    // if(!task) {
-    //     alert("Please fill ou the task");
-    //     return;
-    // }
-
+// function validFormFieldInput(){
+//     if(!name || !description || !assignedTo || !dueDate){
+//         errorMessage.innerHTML = "Please enter valid input"
+//         errorMessage.style.display = "block"
+//         errorMessage.style.color = "red";
+//     }
+// }
 
 validFormFieldInput();
 
-// const name = newTaskNameInput.value;
-
-// if(!validFormFieldInput(name)){
-//     error.Message.innerHTML = "Invalid name input"
-//     errorMessage.style.display = "block"
-// }else{
-//     errorMessage.style.display = "none"
-// }
-
 let newTask = new TaskManager();
-newTask.addTask(name, description, assignedTo, dueDate);
+newTask.addTask(name, description, assignedTo, dueDate, status);
+// createTaskHtml(name, description, assignedTo, dueDate, status);
 newTask.render();
 
-let taskList =[];
 taskList.push(newTask);
 console.log(taskList);
 
-const inputs = document.querySelectorAll('#newTaskNameInput, #newTaskDescription, #newTaskAssignedTo, #newTaskDueDate');
+// let taskHtml = createTaskHtml(name, description, assignedTo, dueDate, status );
+// console.log(taskHtml);
 
+
+//clear inputs after submit button is pressed
+const inputs = document.querySelectorAll('#newTaskNameInput, #newTaskDescription, #newTaskAssignedTo, #newTaskDueDate');
 inputs.forEach(input => {
     input.value = '';
 })
 
 });
 
-let taskHtml = createTaskHtml("taskFive", "washing dishes", "Mel", "4/13/2022", "IN-PROGRESS" );
-console.log(taskHtml);
 
 
-function validFormFieldInput(data){
-    return data !== null && data !== ''
-};
+
+// function validFormFieldInput(data){
+//     return data !== null && data !== ''
+// };

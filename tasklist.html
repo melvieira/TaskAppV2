@@ -34,12 +34,16 @@
               <form id="newTaskForm">
                 <div class="mb-3">
                   <label for="exampleInputName" class="form-label">Name</label>
+
                   <input
                     type="text"
                     class="form-control"
                     id="newTaskNameInput"
                     aria-describedby="nameHelp"
                   />
+                  <div id="alertMessage" style="display: none" class="alert" role="alert">
+                    Error message
+                    </div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputDescription" class="form-label"
@@ -67,7 +71,7 @@
                   >
                   <br />
                   <!---Dropdown Date picker-->
-                  <input type="datetime-local" id="newTaskDueDate"/>
+                  <input type="date" id="newTaskDueDate"/>
                 </div>
 
 

@@ -31,7 +31,7 @@
         <div class="row">
           <div class="col-7 justify-content-center">
             <section id="">
-              <form id="newTaskForm">
+              <form id="form" class="form-control">
                 <div class="mb-3">
                   <label for="exampleInputName" class="form-label">Name</label>
 
@@ -41,9 +41,9 @@
                     id="newTaskNameInput"
                     aria-describedby="nameHelp"
                   />
-                  <div id="alertMessage" style="display: none" class="alert" role="alert">
+                  <small>
                     Error message
-                    </div>
+                  </small>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputDescription" class="form-label"
@@ -54,6 +54,9 @@
                     class="form-control"
                     id="newTaskDescription"
                   />
+                  <small>
+                    Error message
+                  </small>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputAssigned To" class="form-label"
@@ -64,14 +67,21 @@
                     class="form-control"
                     id="newTaskAssignedTo"
                   />
+                  <small>
+                    Error message
+                  </small>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputDue Date" class="form-label"
                     >Due Date</label
                   >
-                  <br />
+
+               
                   <!---Dropdown Date picker-->
-                  <input type="date" id="newTaskDueDate"/>
+                  <input type="date" id="newTaskDueDate" class="form-control"/>
+                  <small>
+                    Error message
+                  </small>
                 </div>
 
 

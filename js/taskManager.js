@@ -26,7 +26,7 @@ class TaskManager {
         // currentId not incrementing
         const task = {
             // Increment the currentId property
-            id: this.currentId++,
+            id: this.currentId += 1,
             name: name,
             description: description,
             assignedTo: assignedTo,
@@ -55,7 +55,7 @@ class TaskManager {
             const status = newTaskStatus.value;
 
             let currentTasks = tasks;
-            let date = new Date(dueDate)
+            let date = new Date(dueDate);
             let formattedDate = date;
 
             let taskHtml = createTaskHtml(name, description, assignedTo, formattedDate, status);
@@ -65,7 +65,7 @@ class TaskManager {
         // const taskHtml = tasksHtmlList.join(tasks);
         const listTasks = document.querySelector('#listTasks');
 
-        listTasks.innerHTML = tasksHtmlList.join(tasks);;
+        listTasks.innerHTML = tasksHtmlList.join(tasks);
 
     }
 }

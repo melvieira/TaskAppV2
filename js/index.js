@@ -1,14 +1,10 @@
 /*Things to fix
-1. Status dropdown working but, picked option not showing up in task li -Geoff. DONE by accident? - Mel
-2. Need to increment the task ID - Geoff
-    New tasks are not being stored in "tasks" array;
-3. Task 5 step 2/3. Render not showing up on page - Mel DONE
-4. Task 6 step 3. Need to fix error to print on page
+2. task list not building on page. Array is incrementing but html task list not updating
+4. clear box appearing around form fields after first submission.
+5. Extra: put a date limit (maybe one year?)
 */
 
-
 const tasks = new TaskManager();
-
 console.log(tasks);
 
 // name, description, assignedTo, dueDate, status)
@@ -24,7 +20,7 @@ console.log(tasks);
 let taskList =[];
 
 //code from example for testing
-const newTaskForm = document.querySelector('#newTaskForm');
+const newTaskForm = document.querySelector('#form');
 
 newTaskForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -44,30 +40,75 @@ const status = newTaskStatus.value;
     /*
         Validation code here
     */
+
+const form = document.getElementById("form");
+
 function validFormFieldInput(){
-    if(!name || !description || !assignedTo || !dueDate) {
-        // error.Message.innerHTML = "Invalid name input"
-        alert("Please enter the required info");
-        return;
-    }
+// trim to remove the whitespaces
+const nameValue = newTaskNameInput.value.trim();
+const descriptionValue = newTaskDescription.value.trim();
+const assignedToValue = newTaskAssignedTo.value.trim();
+const dueDateValue = new Date(newTaskDueDate.value.trim());
+console.log(dueDateValue);
+
+
+	if(nameValue === '') {
+		setErrorFor(newTaskNameInput, 'Task name cannot be blank');
+	} else {
+		setSuccessFor(newTaskNameInput);
+	}
+
+	if(descriptionValue === '') {
+		setErrorFor(newTaskDescription, 'Description cannot be blank');
+	} else {
+		setSuccessFor(newTaskDescription);
+	}
+
+	if(assignedToValue === '') {
+		setErrorFor(newTaskAssignedTo, 'Assigned to cannot be blank');
+	} else {
+		setSuccessFor(newTaskAssignedTo);
+	}
+
+
+    // if(dueDateValue <= (new Date()) || dueDateValue == "Invalid Date") {
+	// 	setErrorFor(newTaskDueDate, 'Due date cannot be in the past or blank');
+	// }else {
+	// 	setSuccessFor(newTaskDueDate);
+	// }
+
+    if(dueDateValue <= (new Date())) {
+		setErrorFor(newTaskDueDate, 'Due date cannot be in the past');
+	}else if( dueDateValue == "Invalid Date") {
+        setErrorFor(newTaskDueDate, 'Due date cannot be blank')
+    } else{
+		setSuccessFor(newTaskDueDate);
+	}
+
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success'
 }
 
 
-// function validFormFieldInput(){
-//     if(!name || !description || !assignedTo || !dueDate){
-//         errorMessage.innerHTML = "Please enter valid input"
-//         errorMessage.style.display = "block"
-//         errorMessage.style.color = "red";
-//     }
-// }
-
 validFormFieldInput();
 
-let newTask = new TaskManager();
+let newTask = tasks;
+new TaskManager();
 newTask.addTask(name, description, assignedTo, dueDate, status);
 // createTaskHtml(name, description, assignedTo, dueDate, status);
 newTask.render();
 
+// tasks.push(newTask);
 taskList.push(newTask);
 console.log(taskList);
 
@@ -81,7 +122,9 @@ inputs.forEach(input => {
     input.value = '';
 })
 
+
 });
+
 
 
 

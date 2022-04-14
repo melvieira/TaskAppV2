@@ -1,5 +1,5 @@
 
-function createTaskHtml(name, description, assignedTo, dueDate, status){
+function createTaskHtml(name, description, assignedTo, dueDate, status,){
     const html =
     ` <li class="list-group-item">
     <div class="card" style="width: 18rem">
@@ -10,6 +10,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status){
         <p class="card-text2">Due: ${dueDate}</p>
         <p class="card-text3">Status: ${status}</p>
       </div>
+      <button type="done button" class="btn btn-primary" >Mark As Done</button>
   </li>`
 
 return html;
@@ -23,7 +24,6 @@ class TaskManager {
 
     }
     addTask(name, description, assignedTo, dueDate, status) {
-        // currentId not incrementing
         const task = {
             // Increment the currentId property
             id: this.currentId += 1,
@@ -34,38 +34,51 @@ class TaskManager {
             status: status
         };
        this.tasks.push(task);
+       return task;
     };
 
+
     render() {
-       let tasksHtmlList = [];
-        for (let i =0; i < TaskManager.length; i++) {
-            // for(let i of tasks){
-            // for(let x in task) {
+        let tasksHtmlList = [];
+        // // this.currentTask;
+        // let currentTask = task.addTask();
 
-            const newTaskNameInput = document.querySelector('#newTaskNameInput');
-            const newTaskDescription = document.querySelector('#newTaskDescription');
-            const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
-            const newTaskDueDate = document.querySelector('#newTaskDueDate');
-            const newTaskStatus = document.querySelector('#newTaskStatus');
+         for (let i =0; i < TaskManager.length; i++) {
+            // const currentTask = tasks;
 
-            const name = newTaskNameInput.value;
-            const description = newTaskDescription.value;
-            const assignedTo = newTaskAssignedTo.value;
-            const dueDate = newTaskDueDate.value;
-            const status = newTaskStatus.value;
 
-            let currentTasks = tasks;
-            let date = new Date(dueDate);
-            let formattedDate = date;
+             // for(let i of tasks){
+             // for(let x in task) {
+            // let currentTask = tasks;
 
-            let taskHtml = createTaskHtml(name, description, assignedTo, formattedDate, status);
-            tasksHtmlList.push(taskHtml);
+             const newTaskNameInput = document.querySelector('#newTaskNameInput');
+             const newTaskDescription = document.querySelector('#newTaskDescription');
+             const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
+             const newTaskDueDate = document.querySelector('#newTaskDueDate');
+             const newTaskStatus = document.querySelector('#newTaskStatus');
 
-        };
-        // const taskHtml = tasksHtmlList.join(tasks);
-        const listTasks = document.querySelector('#listTasks');
+             const name = newTaskNameInput.value;
+             const description = newTaskDescription.value;
+             const assignedTo = newTaskAssignedTo.value;
+             const dueDate = newTaskDueDate.value;
+             const status = newTaskStatus.value;
 
-        listTasks.innerHTML = tasksHtmlList.join(tasks);
+
+            // console.log(currentTask);
+             let date = new Date(dueDate);
+             let formattedDate = date;
+            // let currentTask = this.addTask();
+             let taskHtml = createTaskHtml(name, description, assignedTo, formattedDate, status);
+             tasksHtmlList.push(taskHtml);
+        }
+
+
+            //  for(let i = 0; i < tasksHtmlList.length; i++){
+            //     document.getElementById("listTasks").innerHTML = tasksHtmlList.join('');
+            //  }
+         const tasksHtml = tasksHtmlList.join('\n')
+         const listTasks = document.querySelector('#listTasks');
+         listTasks.innerHTML += tasksHtml;
 
     }
 }

@@ -3,9 +3,8 @@
 4. clear box appearing around form fields after first submission.
 5. Extra: put a date limit (maybe one year?)
 */
-
 const tasks = new TaskManager();
-console.log(tasks);
+
 
 // name, description, assignedTo, dueDate, status)
 // const taskOne = new TaskManager("taskOne");
@@ -17,7 +16,7 @@ console.log(tasks);
 // console.log(taskTwo);
 
 // create taskList to hold all tasks
-let taskList =[];
+// let taskList =[];
 
 //code from example for testing
 const newTaskForm = document.querySelector('#form');
@@ -100,21 +99,24 @@ function setSuccessFor(input) {
 }
 
 
-validFormFieldInput();
+// validFormFieldInput();
 
-let newTask = tasks;
-new TaskManager();
-newTask.addTask(name, description, assignedTo, dueDate, status);
+// let newTask = tasks;
+// new TaskManager();
+tasks.addTask(name, description, assignedTo, dueDate, status);
 // createTaskHtml(name, description, assignedTo, dueDate, status);
-newTask.render();
+tasks.render();
+// console.log(newTask);
+console.log(tasks);
 
 // tasks.push(newTask);
-taskList.push(newTask);
-console.log(taskList);
+// taskList.push(newTask);
+// console.log(taskList);
 
 // let taskHtml = createTaskHtml(name, description, assignedTo, dueDate, status );
 // console.log(taskHtml);
 
+// console.log(TaskManager);
 
 //clear inputs after submit button is pressed
 const inputs = document.querySelectorAll('#newTaskNameInput, #newTaskDescription, #newTaskAssignedTo, #newTaskDueDate');
@@ -123,10 +125,39 @@ inputs.forEach(input => {
 })
 
 
+
 });
 
 
+// function createCloseButton(p) {
+// 	let span = document.createElement("SPAN");
+// 	let txt = document.createTextNode(html);
 
+// 	span.className = "close";
+// 	span.appendChild(txt);
+// 	p.appendChild(span);
+
+// 	span.onclick = () => span.parentElement.style.display = "none";
+//   }
+
+//   document.querySelectorAll('p').forEach(createCloseButton);
+
+//   document.querySelector('div').addEventListener('click', (e) => {
+// 	if (e.target.tagName === 'p')
+// 	  e.target.classList.toggle('checked');
+//   });
+
+//   function add() {
+// 	let p = document.createElement('P');
+// 	let input_value = document.querySelector('#newTaskNameInput').value;
+// 	let input_text = document.createTextNode(input_value);
+
+// 	p.appendChild(input_text);
+// 	document.querySelector('div').appendChild(p);
+// 	document.form_main.task.value = "";
+
+// 	createCloseButton(p);
+//   }
 
 
 // function validFormFieldInput(data){

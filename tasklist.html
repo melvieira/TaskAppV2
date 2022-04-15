@@ -16,7 +16,7 @@
     <title>Task List</title>
   </head>
   <body>
-
+    <div class="navHolder">
     <nav>
       <ul>
         <li><h1>Task List</h1></li>
@@ -24,17 +24,17 @@
         <li><a href="tasklist.html">Task List</a></li>
       </ul>
     </nav>
+  </div>
     <br />
     <main>
       <!---Task Form-->
       <div class="container">
         <div class="row">
-          <div class="col-7 justify-content-center">
-            <section id="">
+          <div class="col-12">
+
               <form id="form" class="form-control" name="form-main">
                 <div class="mb-3">
                   <label for="exampleInputName" class="form-label">Name</label>
-
                   <input
                     type="text"
                     class="form-control"
@@ -53,6 +53,7 @@
                     type="text"
                     class="form-control"
                     id="newTaskDescription"
+
                   />
                   <small>
                     Error message
@@ -66,6 +67,7 @@
                     type="text"
                     class="form-control"
                     id="newTaskAssignedTo"
+
                   />
                   <small>
                     Error message
@@ -89,14 +91,16 @@
                   <label for="exampleInputStatus" class="form-label"
                     >Status</label
                   >
+
 <!--Dropdown Button-->
 
-<select name="status" id="newTaskStatus">
+<select class="statusUpdate" name="status" id="newTaskStatus">
   <option value="to-do">TO-DO</option>
   <option value="in-progress">IN-PROGRESS</option>
   <option value="review">REVIEW</option>
   <option value="done">DONE</option>
 </select>
+<br/>
                   <!-- <button
                     class="btn btn-outline-secondary dropdown-toggle"
                     type="button"
@@ -125,37 +129,19 @@
                     </li>
                   </ul>
                 </div> -->
-                <div id="alertMessage" style="display: none" class="alert alert-danger" role="alert">
-                  Error message
-                  </div>
+                <div class="buttonGroup">
                 <button type="reset" class="btn btn-primary">Reset</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
               </form>
-            </section>
+
           </div>
         </div>
       </div>
 
 
       <!-- Task List Cards -->
-      <!-- <h1>Lista de tarefas</h1>
-
-      <form name="form_main">
-        <label for="task">Tarefa: </label>
-        <input type="text" name="task" id="task" /> <br />
-        <button type="button" onclick="add()">Add</button>
-      </form>
-
-      <fieldset>
-        <legend>Tarefas:</legend>
-        <ul>
-          <li>Limpar casa</li>
-          <li>Outras</li>
-        </ul>
-      </fieldset> -->
-
-
-      <div class="container" id="listTasks">
+      <div class="container" id="tasksList">
 
       </div>
 

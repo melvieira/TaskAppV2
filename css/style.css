@@ -27,8 +27,8 @@ nav ul li a {
 }
 
 body {
-  background-color: aqua;
-  font-family: 'Times New Roman', Times, serif;
+  background-color: #d4e2fc;
+  font-family: "Times New Roman", Times, serif;
   display: center;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,6 @@ body {
   position: center;
   font-family: inherit;
   font-size: 14px;
-
 }
 
 .form-control small {

@@ -3,7 +3,7 @@
 4. clear box appearing around form fields after first submission.
 5. Extra: put a date limit (maybe one year?)
 */
-const tasks = new TaskManager();
+const tasks = new TaskManager(0);
 
 
 // name, description, assignedTo, dueDate, status)
@@ -103,61 +103,43 @@ function setSuccessFor(input) {
 
 // let newTask = tasks;
 // new TaskManager();
-tasks.addTask(name, description, assignedTo, dueDate, status);
-// createTaskHtml(name, description, assignedTo, dueDate, status);
+// tasks.addTask(name, description, assignedTo, dueDate, status);
 tasks.render();
-// console.log(newTask);
-console.log(tasks);
 
-// tasks.push(newTask);
-// taskList.push(newTask);
-// console.log(taskList);
-
-// let taskHtml = createTaskHtml(name, description, assignedTo, dueDate, status );
-// console.log(taskHtml);
 
 // console.log(TaskManager);
 
 //clear inputs after submit button is pressed
+
+
+const tasksList = document.querySelector('#tasksList');
+tasksList.addEventListener('click', (event) => {
+	if(event.target.classList.contains('done-button')) {
+		const parentTask = event.target.parentElement.parentElement;
+		console.log(parentTask);
+		// const taskId = Number(parentTask.dataset.taskId);
+		const taskId = 'TESTING';
+		console.log(taskId);
+		console.log(tasks.name);
+
+		// const task = this.tasks.getTaskById(taskId);
+
+		// task.status = 'DONE';
+
+		// tasks.render();
+
+	}
+
+	console.log('Pressed Mark as Done Button');
+});
+
 const inputs = document.querySelectorAll('#newTaskNameInput, #newTaskDescription, #newTaskAssignedTo, #newTaskDueDate');
 inputs.forEach(input => {
     input.value = '';
-})
-
-
+});
 
 });
 
-
-// function createCloseButton(p) {
-// 	let span = document.createElement("SPAN");
-// 	let txt = document.createTextNode(html);
-
-// 	span.className = "close";
-// 	span.appendChild(txt);
-// 	p.appendChild(span);
-
-// 	span.onclick = () => span.parentElement.style.display = "none";
-//   }
-
-//   document.querySelectorAll('p').forEach(createCloseButton);
-
-//   document.querySelector('div').addEventListener('click', (e) => {
-// 	if (e.target.tagName === 'p')
-// 	  e.target.classList.toggle('checked');
-//   });
-
-//   function add() {
-// 	let p = document.createElement('P');
-// 	let input_value = document.querySelector('#newTaskNameInput').value;
-// 	let input_text = document.createTextNode(input_value);
-
-// 	p.appendChild(input_text);
-// 	document.querySelector('div').appendChild(p);
-// 	document.form_main.task.value = "";
-
-// 	createCloseButton(p);
-//   }
 
 
 // function validFormFieldInput(data){

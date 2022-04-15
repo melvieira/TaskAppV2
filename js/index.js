@@ -120,7 +120,8 @@ tasksList.addEventListener('click', (event) => {
 		// const taskId = Number(parentTask.dataset.taskId);
 		const taskId = 'TESTING';
 		console.log(taskId);
-		console.log(tasks.name);
+		// trying to see if I can access the name value of a task
+		console.log(tasks.id);
 
 		// const task = this.tasks.getTaskById(taskId);
 

@@ -4,7 +4,8 @@ h1 {
 }
 
 nav {
-  padding: 75px 25px;
+  padding: 40px 25px;
+  background-color: #75a9f9;
 }
 
 nav ul li {
@@ -14,21 +15,23 @@ nav ul li a {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 18px;
-  color: #828282;
+  color: black;
   padding-left: 80px;
 }
+nav li h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+}
 
-.container {
-  background-color: #fff;
+/* .container {
   border-radius: 5px;
   box-shadow: 0 2px 5px rbga(0, 0, 0, 0.3);
-  width: 400px;
-  max-width: 100%;
-}
+} */
 
 body {
   background-color: #d4e2fc;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Helvetica, "Times New Roman", Times, serif;
   display: center;
   align-items: center;
   justify-content: center;
@@ -36,9 +39,24 @@ body {
   margin: 0;
 }
 
-.form {
-  padding: 20px 40px;
+label {
+  display: inline-flex;
+  position: relative;
+  font-size: 18px;
+  padding-right: 70px;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
 }
+
+#form {
+  background-color: #d4e2fc;
+}
+.form-control input {
+  width: 65%;
+}
+
 .form-control {
   margin-bottom: 10px;
   padding-bottom: 20px;
@@ -48,6 +66,7 @@ body {
 .form-control label {
   display: inline-block;
   margin-bottom: 5px;
+  padding-top: 15px;
 }
 
 .form-control input {
@@ -70,9 +89,26 @@ body {
 .form-control.error small {
   visibility: visible;
 }
+
+.statusUpdate {
+  height: 35px;
+  width: 65%;
+}
+.buttonGroup {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.btn {
+  margin: 15px;
+  width: 150px;
+}
+
 .header h1 {
   margin: 0;
   align-items: center;
   justify-content: center;
   margin-top: 0;
 }
+

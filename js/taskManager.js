@@ -1,17 +1,18 @@
 
 function createTaskHtml(name, description, assignedTo, dueDate, status, id){
     const html =
-    ` <li class="list-group-item">ID#:<span>${id}</span>
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <h3 class="card-title">${name}</h3>
-        <h4 class="card-text">Assigned To: ${assignedTo}</h4>
-        <p class="card-text1">${description}</p>
-        <p class="card-text2">Due: ${dueDate}</p>
-        <p class="card-text3">Status: ${status}</p>
-      </div>
-      <button type="done button" class="btn btn-primary done-button" >Mark As Done</button>
-  </li>`
+    `<li class="list-group-item">ID#:<span>${id}</span>
+        <div class="card" style="width: 18rem">
+        <div class="card-body">
+            <h3 class="card-title">${name}</h3>
+            <h4 class="card-text">Assigned To: ${assignedTo}</h4>
+            <p class="card-text1">${description}</p>
+            <p class="card-text2">Due: ${dueDate}</p>
+            <p class="card-text3">Status: ${status}</p>
+        </div>
+        <button type="done button" class="btn btn-primary done-button" >Mark As Done</button>
+        </div>
+    </li>`
 
 return html;
 }

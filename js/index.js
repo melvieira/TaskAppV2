@@ -1,22 +1,7 @@
 /*Things to fix
-2. task list not building on page. Array is incrementing but html task list not updating
-4. clear box appearing around form fields after first submission.
 5. Extra: put a date limit (maybe one year?)
 */
-const tasks = new TaskManager(0);
-
-
-// name, description, assignedTo, dueDate, status)
-// const taskOne = new TaskManager("taskOne");
-// taskOne.addTask('taskOne', 'Clean the fridge', 'Melanie', '4/12/2022', 'PENDING');
-// console.log(taskOne);
-
-// const taskTwo = new TaskManager("taskTwo");
-// taskTwo.addTask('taskTwo', 'Do laundry', 'Geoffroy', '4/13/2022', 'PENDING');
-// console.log(taskTwo);
-
-// create taskList to hold all tasks
-// let taskList =[];
+// const tasks = new TaskManager(0);
 
 //code from example for testing
 const newTaskForm = document.querySelector('#form');
@@ -103,37 +88,76 @@ function setSuccessFor(input) {
 
 // let newTask = tasks;
 // new TaskManager();
-// tasks.addTask(name, description, assignedTo, dueDate, status);
+tasks.addTask(name, description, assignedTo, dueDate, status);
 tasks.render();
 
 
 // console.log(TaskManager);
 
-//clear inputs after submit button is pressed
+
 
 
 const tasksList = document.querySelector('#tasksList');
-tasksList.addEventListener('click', (event) => {
-	if(event.target.classList.contains('done-button')) {
-		const parentTask = event.target.parentElement.parentElement;
+
+// tasksList.addEventListener('click', (event) => {
+// 	if(event.target.classList.contains('done-button')) {
+// 		const parentTask = event.target.parentElement.parentElement;
+// 		console.log(parentTask);
+
+// 		// const taskId = Number(parentTask.dataset.taskId);
+// 		const taskId = 1;
+
+// 		// trying to see if I can access the name value of a task
+// 		// console.log(tasks.id);
+
+// 		const task = tasks.getTaskById(1);
+// 		console.log(task);
+// 		console.log(task.status);
+// 		// console.log(tasks);
+// 		task.status = 'DONE';
+// 		console.log(task.status);
+// 		console.log(task);
+
+// 		// tasks.render();
+
+// 	}
+// });
+
+// 	console.log('Pressed Mark as Done Button');
+// });
+
+tasksList.addEventListener('click',function(event){
+    const item = event.target;
+    if(item.classList.contains('done-button')){
+        // const parentTask = item.parentElement.parentElement;
+		const parentTask = item.parentElement.parentElement;
 		console.log(parentTask);
-		// const taskId = Number(parentTask.dataset.taskId);
-		const taskId = 'TESTING';
+        const taskId = parseInt(parentTask.id);
 		console.log(taskId);
-		// trying to see if I can access the name value of a task
-		console.log(tasks.id);
+        const task = tasks.getTaskById(taskId);
+        task.status = 'DONE';
+		console.log(task.status);
+        // taskManager.save();
+        // // task9completed
+        // // taskManager.load();
+        tasks.render();
 
-		// const task = this.tasks.getTaskById(taskId);
+        // const btn = document.querySelector('.done-button');
+        // if()
+    }
 
-		// task.status = 'DONE';
+    if(item.classList.contains('delete-button')){
+        const parentTask = item.parentElement.parentElement;
+        const taskId = parseInt(parentTask.id);
+        const task = taskManager.getTaskById(taskId);
+        taskManager.deleteTask(taskId);
+        taskManager.save();
+        taskManager.render();
 
-		// tasks.render();
-
-	}
-
-	console.log('Pressed Mark as Done Button');
+    }
 });
 
+//clear inputs after submit button is pressed
 const inputs = document.querySelectorAll('#newTaskNameInput, #newTaskDescription, #newTaskAssignedTo, #newTaskDueDate');
 inputs.forEach(input => {
     input.value = '';

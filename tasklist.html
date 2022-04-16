@@ -13,114 +13,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Task List</title>
+    <title>Task~it</title>
   </head>
   <body>
 
     <nav>
       <ul>
-        <li><h1>Task List</h1></li>
+        <li><h1>Task~it</h1></li>
         <li><a href="index.html">Task Form</a></li>
         <li><a href="tasklist.html">Task List</a></li>
       </ul>
     </nav>
 
     <br />
-    <main>
-      <script>
-        if(tasks)
-      </script>
-      <!---Task Form-->
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
 
-              <form id="form" class="form-control" name="form-main">
-                <div class="mb-3">
-                  <label for="exampleInputName" class="form-label">Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="newTaskNameInput"
-                    aria-describedby="nameHelp"
-                  />
-                  <small>
-                    Error message
-                  </small>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputDescription" class="form-label"
-                    >Description</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="newTaskDescription"
+    <form id="form" class="form-control" name="form-main">
+        <!-- Task List Cards -->
+        <div class="container" id="tasksList">
 
-                  />
-                  <small>
-                    Error message
-                  </small>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputAssigned To" class="form-label"
-                    >Assigned To</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="newTaskAssignedTo"
-
-                  />
-                  <small>
-                    Error message
-                  </small>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputDue Date" class="form-label"
-                    >Due Date</label
-                  >
-
-
-                  <!---Dropdown Date picker-->
-                  <input type="date" id="newTaskDueDate" class="form-control"/>
-                  <small>
-                    Error message
-                  </small>
-                </div>
-
-
-                <div class="mb-3">
-                  <label for="exampleInputStatus" class="form-label"
-                    >Status</label
-                  >
-
-<!--Dropdown Button-->
-
-<select class="statusUpdate" name="status" id="newTaskStatus">
-  <option value="to-do">TO-DO</option>
-  <option value="in-progress">IN-PROGRESS</option>
-  <option value="review">REVIEW</option>
-  <option value="done">DONE</option>
-</select>
-<br/>
-
-                <div class="buttonGroup">
-                <button type="reset" class="btn btn-primary">Reset</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-              </form>
-
-          </div>
         </div>
-      </div>
-
-
-      <!-- Task List Cards -->
-      <div class="container" id="tasksList">
-
-      </div>
-
+    </form>
 
       <!-- Option 1: Bootstrap Bundle with Popper -->
       <script
@@ -128,12 +40,6 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"
       ></script>
-
-      <!-- Option 2: Separate Popper and Bootstrap JS -->
-      <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    --></main>
     <script src="js/taskManager.js"></script>
     <script src="js/index.js"></script>
   </body>

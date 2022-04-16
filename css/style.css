@@ -52,6 +52,7 @@ label {
 
 #form {
   background-color: #d4e2fc;
+  border: none;
 }
 .form-control input {
   width: 65%;
@@ -112,3 +113,10 @@ label {
   margin-top: 0;
 }
 
+#tasksList li {
+  background-color: #d4e2fc;
+  border: none;
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+}

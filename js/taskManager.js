@@ -3,9 +3,10 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
     let html;
     if((status == "to-do") || (status == "in-progress") || (status == "review")){
     html =
-    `<li id=${id} class="list-group-item">ID#:<span>${id}</span>
-        <div class="card" style="width: 18rem">
+    `<li id=${id} class="list-group-item">
+        <div class="card" style="width: 20em">
         <div class="card-body">
+        ID#:<span>${id}</span>
             <h3 class="card-title">${name}</h3>
             <h4 class="card-text">Assigned To: ${assignedTo}</h4>
             <p class="card-text1">${description}</p>
@@ -18,9 +19,10 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
     </li>`
     }else{
         html =
-        `<li id=${id} class="list-group-item">ID#:<span>${id}</span>
-            <div class="card" style="width: 18rem">
+        `<li id=${id} class="list-group-item">
+            <div class="card" style="width: 20em">
             <div class="card-body">
+            ID#:<span>${id}</span>
                 <h3 class="card-title">${name}</h3>
                 <h4 class="card-text">Assigned To: ${assignedTo}</h4>
                 <p class="card-text1">${description}</p>

@@ -16,7 +16,7 @@
     <title>Task List</title>
   </head>
   <body>
-    <div class="navHolder">
+
     <nav>
       <ul>
         <li><h1>Task List</h1></li>
@@ -24,9 +24,12 @@
         <li><a href="tasklist.html">Task List</a></li>
       </ul>
     </nav>
-  </div>
+
     <br />
     <main>
+      <script>
+        if(tasks)
+      </script>
       <!---Task Form-->
       <div class="container">
         <div class="row">
@@ -101,34 +104,7 @@
   <option value="done">DONE</option>
 </select>
 <br/>
-                  <!-- <button
-                    class="btn btn-outline-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenu2"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Select
-                  </button>
-                  <ul class="dropdown-menu dropdownMenu2">
-                    <li>
-                      <button class="dropdown-item" type="button">To Do</button>
-                    </li>
-                    <li>
-                      <button class="dropdown-item" type="button">
-                        In Progress
-                      </button>
-                    </li>
-                    <li>
-                      <button class="dropdown-item" type="button">
-                        Review
-                      </button>
-                    </li>
-                    <li>
-                      <button class="dropdown-item" type="button">Done</button>
-                    </li>
-                  </ul>
-                </div> -->
+
                 <div class="buttonGroup">
                 <button type="reset" class="btn btn-primary">Reset</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -145,139 +121,7 @@
 
       </div>
 
-        <!-- <div class="row">
-          <div class="col-md-4">
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item">
-                <div class="card" style="width: 18rem">
-                  <div class="card-body">
-                    <h3 class="card-title">EXAMPLE CARD</h3>
-                    <h4 class="card-text">EXAMPLE CARD</h4>
-                    <p class="card-text1">EXAMPLE CARD</p>
-                    <p class="card-text2">Due Date: EXAMPLE CARD</p>
-                    <p class="card-text3">Status: IN PROGRESS</p>
-                  </div>
-                  <label for="select">Select</label>
-                  <select name="select" id="select">
-                    <option value="to-do">TO-DO</option>
-                    <option value="in-progress">IN-PROGRESS</option>
-                    <option value="review">REVIEW</option>
-                    <option value="done">DONE</option>
-                  </select>
-                </div>
-                <button type="done button" class="btn btn-primary" >Mark As Done</button>
-                <button type="delete button" class="btn btn-primary" >Delete</button>
-              </li>
-              <li class="list-group-item">
-                <div class="card" style="width: 18rem">
-                  <div class="card-body">
-                    <h3 class="card-title">Wireframe</h3>
-                    <h4 class="card-text">Assign to Jane</h4>
-                    <p class="card-text1">Create wireframe for Task App</p>
-                    <p class="card-text2">Due Date: 02/08/2022</p>
-                    <p class="card-text3">Status: IN PROGRESS</p>
-                  </div>
-                  <label for="select">Select</label>
-                  <select name="select" id="select">
-                    <option value="to-do">TO-DO</option>
-                    <option value="in-progress">IN-PROGRESS</option>
-                    <option value="review">REVIEW</option>
-                    <option value="done">DONE</option>
-                  </select>
-                </div>
-                <button type="done button" class="btn btn-primary" >Mark As Done</button>
-                <button type="delete button" class="btn btn-primary" >Delete</button>
-              </li>
-            </ul>
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item">
-                <div class="card" style="width: 18rem">
-                  <div class="card-body">
-                    <h3 class="card-title">Images</h3>
-                    <h4 class="card-text">Assign to James</h4>
-                    <p class="card-text1">Find images for various pages</p>
-                    <p class="card-text2">Due Date: 02/08/2022</p>
-                    <p class="card-text3">Status: IN PROGRESS</p>
-                  </div>
-                  <label for="select">Select</label>
-                  <select name="select" id="select">
-                    <option value="to-do">TO-DO</option>
-                    <option value="in-progress">IN-PROGRESS</option>
-                    <option value="review">REVIEW</option>
-                    <option value="done">DONE</option>
-                  </select>
-                </div>
-                <button type="done button" class="btn btn-primary" >Mark As Done</button>
-                <button type="delete button" class="btn btn-primary" >Delete</button>
-              </li>
 
-              <li class="list-group-item">
-                <div class="card" style="width: 18rem">
-                  <div class="card-body">
-                    <h3 class="card-title">Color Scheme/Typography</h3>
-                    <h4 class="card-text">Assign to James</h4>
-                    <p class="card-text1">Meet with Design team to finalize color scheme and typography</p>
-                    <p class="card-text2">Due Date: 02/08/2022</p>
-                    <p class="card-text3">Status: IN PROGRESS</p>
-                  </div>
-                  <label for="select">Select</label>
-                  <select name="select" id="select">
-                    <option value="to-do">TO-DO</option>
-                    <option value="in-progress">IN-PROGRESS</option>
-                    <option value="review">REVIEW</option>
-                    <option value="done">DONE</option>
-                  </select>
-                </div>
-                <button type="done button" class="btn btn-primary" >Mark As Done</button>
-                <button type="delete button" class="btn btn-primary" >Delete</button>
-              </li>
-            </ul>
-            <ul class="list-group list-group-horizontal">
-              <li class="list-group-item">
-                <div class="card" style="width: 18rem">
-                  <div class="card-body">
-                    <h3 class="card-title">Quality Assurance</h3>
-                    <h4 class="card-text">Assign to James</h4>
-                    <p class="card-text1">Meet with QA team to discuss user experience/bugs</p>
-                    <p class="card-text2">Due Date: 02/08/2022</p>
-                    <p class="card-text3">Status: IN PROGRESS</p>
-                  </div>
-                  <label for="select">Select</label>
-                  <select name="select" id="select">
-                    <option value="to-do">TO-DO</option>
-                    <option value="in-progress">IN-PROGRESS</option>
-                    <option value="review">REVIEW</option>
-                    <option value="done">DONE</option>
-                  </select>
-                </div>
-                <button type="done button" class="btn btn-primary" >Mark As Done</button>
-                <button type="delete button" class="btn btn-primary" >Delete</button>
-              </li>
-              <li class="list-group-item">
-                <div class="card" style="width: 18rem">
-                  <div class="card-body">
-                    <h3 class="card-title">Final Presentation</h3>
-                    <h4 class="card-text">Assign to John</h4>
-                    <p class="card-text1">Present shippable product to stakeholders</p>
-                    <p class="card-text2">Due Date: 02/08/2022</p>
-                    <p class="card-text3">Status: IN PROGRESS</p>
-                  </div>
-                  <label for="select">Select</label>
-                  <select name="select" id="select">
-                    <option value="to-do">TO-DO</option>
-                    <option value="in-progress">IN-PROGRESS</option>
-                    <option value="review">REVIEW</option>
-                    <option value="done">DONE</option>
-                  </select>
-                </div>
-                <button type="done button" class="btn btn-primary" >Mark As Done</button>
-                <button type="delete button" class="btn btn-primary" >Delete</button>
-              </li>
-            </ul> -->
-            <!-- </div>
-          </div> -->
-        </div>
-      </div>
       <!-- Option 1: Bootstrap Bundle with Popper -->
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

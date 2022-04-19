@@ -24,11 +24,6 @@ nav li h1 {
   font-weight: bolder;
 }
 
-/* .container {
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rbga(0, 0, 0, 0.3);
-} */
-
 body {
   background-color: #d4e2fc;
   font-family: Helvetica, "Times New Roman", Times, serif;
@@ -38,6 +33,9 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+/* .hero-image {
+  background-image: url(https://i.pinimg.com/originals/a5/2e/3e/a52e3ead549f0fef288d9d074b979df2.jpg);
+} */
 
 label {
   display: inline-flex;
@@ -54,14 +52,13 @@ label {
   background-color: #d4e2fc;
   border: none;
 }
-.form-control input {
-  width: 65%;
-}
 
 .form-control {
   margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
+  background-color: #d4e2fc;
+  border: none;
 }
 
 .form-control label {
@@ -71,12 +68,17 @@ label {
 }
 
 .form-control input {
+  width: 65%;
+  background-color: white;
+}
+
+.form-control input {
   border: 2px solid #271d1d;
   border-radius: 3px;
   display: inline-flex;
   position: center;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 22px;
 }
 
 .form-control small {

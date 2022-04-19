@@ -1,6 +1,3 @@
-/*Things to fix
-5. Extra: put a date limit (maybe one year?)
-*/
 
 // localStorage.clear();
 tasks.load();
@@ -39,7 +36,7 @@ function validFormFieldInput(){
 			setSuccessFor(newTaskDueDate);
 		}
 
-		if((nameValue === '') || (descriptionValue === '') || (assignedToValue === '') || (dueDateValue == "Invalid Date")) {
+		if((nameValue === '') || (descriptionValue === '') || (assignedToValue === '') || (dueDateValue == "Invalid Date")|| (dueDateValue <= (new Date()))) {
 			return false;
 		}else{
 			return true;
@@ -78,13 +75,9 @@ newTaskForm.addEventListener('submit', (event) => {
 	const dueDate = newTaskDueDate.value;
 	const status = newTaskStatus.value;
 
-    /*
-        Validation code here
-    */
 
 	const form = document.getElementById("form");
 
-	// validFormFieldInput();
 
 	let isFormValidation = validFormFieldInput();
 
@@ -99,20 +92,6 @@ newTaskForm.addEventListener('submit', (event) => {
 			input.value = '';
 		});
 	}
-
-
-// let newTask = tasks;
-// new TaskManager();
-
-// tasks.addTask(name, description, assignedTo, dueDate, status);
-// tasks.save();
-// tasks.render();
-
-// //clear inputs after submit button is pressed
-// const inputs = document.querySelectorAll('#newTaskNameInput, #newTaskDescription, #newTaskAssignedTo, #newTaskDueDate');
-// inputs.forEach(input => {
-//     input.value = '';
-// });
 
 });
 
@@ -137,16 +116,8 @@ tasksList.addEventListener('click',function(event){
         const task = tasks.getTaskById(taskId);
         tasks.deleteTask(taskId);
 		tasks.save();
-				// tasks.load();
         tasks.render();
 
     }
 });
 
-
-
-
-
-// function validFormFieldInput(data){
-//     return data !== null && data !== ''
-// };

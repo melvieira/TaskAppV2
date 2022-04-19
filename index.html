@@ -20,17 +20,18 @@
     <nav>
       <ul>
         <li><h1>Task~it</h1></li>
-        <li><a href="index.html">Task Form</a></li>
-        <li><a href="tasklist.html">Task List</a></li>
+        <li><a class="nav-link active text-dark" href="index.html">Task Form</a></li>
+        <li><a class="nav-link" href="tasklist.html">Task List</a></li>
       </ul>
     </nav>
 
     <br />
     <main>
+      <div class="hero-image">
       <!---Task Form-->
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-8">
 
               <form id="form" class="form-control" name="form-main">
                 <div class="mb-3">
@@ -94,7 +95,7 @@
 
 <!--Dropdown Button-->
 
-<select class="statusUpdate" name="status" id="newTaskStatus">
+<select class="statusUpdate form-label" name="status" id="newTaskStatus">
   <option value="to-do">TO-DO</option>
   <option value="in-progress">IN-PROGRESS</option>
   <option value="review">REVIEW</option>
@@ -117,9 +118,10 @@
       <div class="container" id="tasksList">
 
       </div>
-
+    </div>
         </div>
       </div>
+
       <!-- Option 1: Bootstrap Bundle with Popper -->
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

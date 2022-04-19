@@ -8,10 +8,11 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
         <div class="card-body">
         ID#:<span>${id}</span>
             <h3 class="card-title">${name}</h3>
-            <h4 class="card-text">Assigned To: ${assignedTo}</h4>
-            <p class="card-text1">${description}</p>
+            <hr>
+            <h5 class="card-text">Assigned To: ${assignedTo}</h4>
+            <p class="card-text1">Description: ${description}</p>
             <p class="card-text2">Due: ${dueDate}</p>
-            <p class="card-text3">Status: ${status}</p>
+            <p class="card-text3" style="font-weight: bold">Status: ${status}</p>
         </div>
         <button type="done button" class="btn btn-primary done-button" >Mark As Done</button>
         <button class="delete-button btn btn-danger ml-1" type="button">Delete Task</button>
@@ -24,10 +25,11 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
             <div class="card-body">
             ID#:<span>${id}</span>
                 <h3 class="card-title">${name}</h3>
-                <h4 class="card-text">Assigned To: ${assignedTo}</h4>
-                <p class="card-text1">${description}</p>
+                <hr>
+                <h5 class="card-text">Assigned To: ${assignedTo}</h4>
+                <p class="card-text1">Description: ${description}</p>
                 <p class="card-text2">Due: ${dueDate}</p>
-                <p class="card-text3" style="color: green">Status: ${status}</p>
+                <p class="card-text3" style="color: green; font-weight:bold;s">Status: ${status}</p>
             </div>
             <button type="done button" class="btn btn-primary done-button invisible" >Mark As Done</button>
             <button class="delete-button btn btn-danger ml-1" type="button">Delete Task</button>

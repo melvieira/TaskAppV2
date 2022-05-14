@@ -6,7 +6,6 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
     `<li id=${id} class="list-group-item">
         <div class="card" style="width: 20em">
         <div class="card-body">
-        ID#:<span>${id}</span>
             <h3 class="card-title">${name}</h3>
             <hr>
             <h5 class="card-text">Assigned To: ${assignedTo}</h4>
@@ -23,7 +22,6 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
         `<li id=${id} class="list-group-item">
             <div class="card" style="width: 20em">
             <div class="card-body">
-            ID#:<span>${id}</span>
                 <h3 class="card-title">${name}</h3>
                 <hr>
                 <h5 class="card-text">Assigned To: ${assignedTo}</h4>

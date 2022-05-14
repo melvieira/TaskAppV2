@@ -4,8 +4,7 @@ h1 {
 }
 
 nav {
-  padding: 40px 25px;
-  background-color: #75a9f9;
+  padding: 30px 25px;
 }
 
 nav ul li {
@@ -14,18 +13,24 @@ nav ul li {
 nav ul li a {
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 18px;
-  color: black;
+  font-size: 20px;
+  font-weight: bolder;
   padding-left: 80px;
 }
 nav li h1 {
   color: white;
-  font-size: 40px;
+  font-size: 80px;
   font-weight: bolder;
+  -webkit-text-stroke: 1px rgb(147, 147, 147);
 }
 
 body {
-  background-color: #d4e2fc;
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(117, 169, 249, 1) 0%,
+    rgba(212, 226, 252, 1) 94%
+  );
   font-family: Helvetica, "Times New Roman", Times, serif;
   display: center;
   align-items: center;
@@ -33,36 +38,34 @@ body {
   min-height: 100vh;
   margin: 0;
 }
-/* .hero-image {
-  background-image: url(https://i.pinimg.com/originals/a5/2e/3e/a52e3ead549f0fef288d9d074b979df2.jpg);
-} */
 
 label {
   display: inline-flex;
   position: relative;
-  font-size: 18px;
+  font-size: 20px;
   padding-right: 70px;
-  width: 150px;
+  width: 190px;
   justify-content: center;
   align-items: center;
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 #form {
-  background-color: #d4e2fc;
   border: none;
 }
 
 .form-control {
   margin-bottom: 10px;
-  padding-bottom: 20px;
+  margin-top: 10px;
   position: relative;
-  background-color: #d4e2fc;
+
+  background-color: transparent;
   border: none;
 }
 
 .form-control label {
   display: inline-block;
+  text-align: center;
   margin-bottom: 5px;
   padding-top: 15px;
 }
@@ -70,10 +73,7 @@ label {
 .form-control input {
   width: 65%;
   background-color: white;
-}
-
-.form-control input {
-  border: 2px solid #271d1d;
+  border: 1px solid #271d1d;
   border-radius: 3px;
   display: inline-flex;
   position: center;
@@ -94,9 +94,10 @@ label {
 }
 
 .statusUpdate {
-  height: 35px;
+  height: 55px;
   width: 65%;
 }
+
 .buttonGroup {
   display: flex;
   position: relative;
@@ -116,9 +117,9 @@ label {
 }
 
 #tasksList li {
-  background-color: #d4e2fc;
   border: none;
   display: inline-flex;
   position: relative;
   justify-content: center;
+  margin: 30px;
 }
